@@ -6,14 +6,15 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
+destination              : ../homepage
 locale                   : "en-US"
 title                    : "Henry Martin"
 title_separator          : "-"
 name                     : &name "Henry Martin"
 description              : &description "Researcher at ETH Zurich"
-url                      : https://henrymartin1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://n.ethz.ch/~martinhe # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "henrymartin1/henrymartin1.github.io"
+repository               : #"henrymartin1/henrymartin1.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -47,7 +48,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  path                   : # blank (default) uses feed.xml
+  path                   :  # blank (default) uses feed.xml
 
 # SEO Related
 google_site_verification :
@@ -82,11 +83,11 @@ analytics:
 author:
   name             : "Henry Martin"
   avatar           : "profile.jpg"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "Doctoral student in Geoinformation Engineering at ETH Zurich"
   location         : "Zurich, Switzerland"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.ch/citations?user=Z27vls4AAAAJ&hl=de&oi=sra"
+  googlescholar    : "https://scholar.google.de/citations?user=Z27vls4AAAAJ&hl=en"
   email            : "martinhe@ethz.ch"
   researchgate     : "https://www.researchgate.net/profile/Henry_Martin12"
   uri              :
@@ -103,7 +104,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "henry-martin/"
-  orcid            : #"http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-0456-8539"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -255,7 +256,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Zurich # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
@@ -303,9 +304,19 @@ tag_archive:
 #     tag: /tags/:name/
 
 
+
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
-    envs: development
+    envs: production
+
+
+scholar:
+  locale: en
+  sort_by: year
+  order: descending
+  bibliography_template: "{{ reference | replace_first: 'Martin, H.', '<b>Martin, H.</b>' }}"
+
+  #style: assets/bibliography/ieee-with-url.csl

@@ -5,12 +5,16 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
+{% comment %} thanks to https://chrirupp.github.io/ for the code to fix the link {% endcomment %}
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
+
+You can also find my articles on <a href="{{author.googlescholar}}">my Google Scholar profile</a>.
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% bibliography %}
+
+
+

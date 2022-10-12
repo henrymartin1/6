@@ -2,14 +2,14 @@
 main:
   - title: "Publications"
     url: /publications/
-  
+
+  - title: "News"
+    url: /news/  
+
   - title: "Projects"
-    url: /projects/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
-  - title: "CV"
+    url: /Projects/
+
+  - title: "cv"
     url: /cv/
 
   - title: "Links"
